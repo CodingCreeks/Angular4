@@ -1,10 +1,10 @@
-import { FirstAssignmentPage } from './app.po';
+import { NewCliPage } from './app.po';
 
-describe('first-assignment App', () => {
-  let page: FirstAssignmentPage;
+describe('new-cli App', () => {
+  let page: NewCliPage;
 
   beforeEach(() => {
-    page = new FirstAssignmentPage();
+    page = new NewCliPage();
   });
 
   it('should display message saying app works', () => {
