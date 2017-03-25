@@ -13,6 +13,6 @@ class="btn btn-primary"
 
 <!--<p [innerText]="allowNewServer"></p>-->
 
-<p>{{ServerCreationStatus}}</p>
-
+<!--<p>{{ServerCreationStatus}}</p>-->
+<p *ngIf="serverCreated">Server was created, Server name is {{serverName}} </p>
 <app-server></app-server>
