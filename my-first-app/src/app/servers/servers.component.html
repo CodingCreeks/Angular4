@@ -5,14 +5,19 @@
 <br>
 <!--<p>{{serverName}}</p>-->
 <br>
-<button type="button" 
-class="btn btn-primary" 
-[disabled]="!allowNewServer"
-(click)="onCreateServer()">Add Servers</button>
+<button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Servers</button>
 <hr>
 
 <!--<p [innerText]="allowNewServer"></p>-->
 
 <!--<p>{{ServerCreationStatus}}</p>-->
-<p *ngIf="serverCreated">Server was created, Server name is {{serverName}} </p>
+<p *ngIf="serverCreated; else noServer">Server was created, Server name is {{serverName}} </p>
+
+<!--Conditional markers(#noServer) with local reference-->
+
+<!--<ng-template #noServer>
+  <p>No Server was created !</p>
+</ng-template>-->
+
+<app-server></app-server>
 <app-server></app-server>
