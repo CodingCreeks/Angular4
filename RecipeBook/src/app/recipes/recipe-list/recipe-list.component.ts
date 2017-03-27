@@ -12,7 +12,7 @@ export class RecipeListComponent implements OnInit {
   
   recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'Test Description', 'http://images.media-allrecipes.com/images/59116.jpg'),
-    new Recipe('A Test Recipe', 'Test Description', 'http://images.media-allrecipes.com/images/59116.jpg')
+    new Recipe('Another Test Recipe', 'Test Description', 'http://images.media-allrecipes.com/images/59116.jpg')
   ];
 
   constructor() { }
