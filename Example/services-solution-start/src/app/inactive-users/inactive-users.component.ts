@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, DoCheck } from '@angular/core';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { UsersService } from '../users.service';
   templateUrl: './inactive-users.component.html',
   styleUrls: ['./inactive-users.component.css']
 })
-export class InactiveUsersComponent implements OnInit {
+export class InactiveUsersComponent implements OnInit, DoCheck {
   users: string[];
   inActiveUsers: number;
 
@@ -15,7 +15,13 @@ export class InactiveUsersComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.userService.inactiveUsers;
-    this.inActiveUsers = this.userService.inActiveUserCount;
+    // this.inActiveUsers = this.userService.inActiveUserCount;
+  }
+
+  ngDoCheck() {
+    // console.log('ngDoCheck called..!');
+    // console.log('InactiveUsers : '+this.users.length);
+    this.inActiveUsers=this.users.length;
   }
 
   onSetToActive(id: number) {

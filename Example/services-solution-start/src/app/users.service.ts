@@ -6,12 +6,10 @@ export class UsersService {
 
   activeUsers = ['Max', 'Anna'];
   inactiveUsers = ['Chris', 'Manu'];
-  activeUserCount: number;
-  inActiveUserCount: number;
 
   constructor(private counterService: CounterService) {
-    this.activeUserCount = this.activeUsers.length;
-    this.inActiveUserCount = this.inactiveUsers.length;
+    // this.activeUserCount = this.activeUsers.length;
+    // this.inActiveUserCount = this.inactiveUsers.length;
   }
 
   setToActive(id: number) {
