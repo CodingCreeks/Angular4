@@ -11,11 +11,11 @@ import { ShoppingListService } from './shopping-list.service';
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
-    this.ingredients = this.slService.getIngredients();
-    this.slService.ingredientsChanged
+    this.ingredients = this.shoppingListService.getIngredients();
+    this.shoppingListService.ingredientsChanged
       .subscribe(
         (ingredients: Ingredient[]) => {
           this.ingredients = ingredients;
