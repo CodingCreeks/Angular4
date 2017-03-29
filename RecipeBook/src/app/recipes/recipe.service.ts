@@ -1,8 +1,10 @@
-import { EventEmitter } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 
 import { Recipe } from "app/recipes/recipe.model";
 import { Ingredient } from "app/shared/ingredient.model";
+import { ShoppingListService } from "app/shopping-list/shopping-list.service";
 
+@Injectable()
 export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
 
@@ -19,7 +21,7 @@ export class RecipeService {
             new Ingredient('Green Chills', 2)
 
         ]),
-         new Recipe('Winter Salad Recipe', 'This is simply a test', 'http://cdn.iowagirleats.com/wp-content/uploads/2013/05/Triple-Berry-Summer-Salad-13_mini.jpg', [
+        new Recipe('Winter Salad Recipe', 'This is simply a test', 'http://cdn.iowagirleats.com/wp-content/uploads/2013/05/Triple-Berry-Summer-Salad-13_mini.jpg', [
             new Ingredient('Avocado', 2),
             new Ingredient('Onions', 2),
             new Ingredient('Green Chills', 2)
@@ -27,7 +29,13 @@ export class RecipeService {
         ])
     ];
 
+    constructor(private shoppingListService: ShoppingListService) { }
+
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    addIngredientTOShoppingList(ingredients: Ingredient[]) {
+        this.shoppingListService.addIngredients(ingredients);
     }
 }
