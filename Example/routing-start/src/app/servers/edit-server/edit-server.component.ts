@@ -32,9 +32,9 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
       }
     );
     this.route.fragment.subscribe();
-    const id= +this.route.snapshot.params['id'];
-
+    const id = +this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(id);
+    //Subscribe rote params to update the id if params change
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
   }
@@ -50,13 +50,12 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.allowEdit) {
+    if (!this.allowEdit) {
       return true;
     }
 
-    if ((this.serverName !== this.server.name ||
-      this.serverStatus !== this.server.status) && this.changesSaved) {
-      return confirm('Do you want to discard the changes ?');
+    if ((this.serverName !== this.server.name || this.serverStatus !== this.server.status ) && !this.changesSaved) {
+      return confirm('Do you want to discard the changes..?');
     } else {
       return true;
     }
