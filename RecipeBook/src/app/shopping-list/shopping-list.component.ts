@@ -26,6 +26,10 @@ private subscription: Subscription;
       );
   }
 
+   onEditItem(index: number){
+      this.shoppingListService.startedEditing.next(index);
+    }
+
     ngOnDestroy(): void {
       this.subscription.unsubscribe();
     }
