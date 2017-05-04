@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 
 import { RecipeService } from "app/recipes/recipe.service";
-import { Recipe } from "app/recipes/recipe.model";
 
 @Component({
   selector: 'app-recipe-edit',
@@ -16,7 +15,9 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   recipeForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService) { }
+  constructor(private route: ActivatedRoute,
+    private recipeService: RecipeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -45,6 +46,8 @@ export class RecipeEditComponent implements OnInit {
       //Advantage of Recative approch of passing the 'Form' values over the conventional approach
       this.recipeService.addRecipe(this.recipeForm.value);
     }
+
+    this.onCancel();
   }
 
   onAddIngredient() {
@@ -56,6 +59,10 @@ export class RecipeEditComponent implements OnInit {
         ])
       })
     );
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], { relativeTo: this.route })
   }
 
   private initForm() {
