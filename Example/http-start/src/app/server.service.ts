@@ -38,4 +38,12 @@ export class ServerService {
                 return Observable.throw('Something went wrong');
             });
     }
+
+    getAppName(){
+        return this.http.get('https://sample-httprequest.firebaseio.com/data/appName.json').map(
+            (response: Response) =>{
+                return response.json();
+            }
+        );
+    }
 }
