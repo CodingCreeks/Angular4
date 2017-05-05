@@ -24,6 +24,7 @@ export class ServerService {
     }
 
     getServers() {
+        // return this.http.get('https://sample-httprequest.firebaseio.com/data.json').map(
         return this.http.get('https://sample-httprequest.firebaseio.com/data').map(
             (response: Response) => {
                 const data = response.json();
