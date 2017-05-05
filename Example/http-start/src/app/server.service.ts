@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ServerService {
@@ -23,7 +24,7 @@ export class ServerService {
     }
 
     getServers() {
-        return this.http.get('https://sample-httprequest.firebaseio.com/data.json').map(
+        return this.http.get('https://sample-httprequest.firebaseio.com/data').map(
             (response: Response) => {
                 const data = response.json();
                 for (const server of data) {
@@ -31,6 +32,10 @@ export class ServerService {
                 }
                 return data;
             }
-        );
+        )
+            .catch(
+            (error: Response) => {
+                return Observable.throw('Something went wrong');
+            });
     }
 }
