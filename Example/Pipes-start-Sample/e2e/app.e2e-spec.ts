@@ -1,10 +1,10 @@
-import { Ng4CompleteGuidePage } from './app.po';
+import { PipesStartSamplePage } from './app.po';
 
-describe('ng4-complete-guide App', function() {
-  let page: Ng4CompleteGuidePage;
+describe('pipes-start-sample App', () => {
+  let page: PipesStartSamplePage;
 
   beforeEach(() => {
-    page = new Ng4CompleteGuidePage();
+    page = new PipesStartSamplePage();
   });
 
   it('should display message saying app works', () => {
