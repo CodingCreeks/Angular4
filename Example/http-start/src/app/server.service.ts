@@ -1,6 +1,6 @@
 
 import { Injectable } from "@angular/core";
-import { Http, Headers} from "@angular/http";
+import { Http, Headers } from "@angular/http";
 
 @Injectable()
 export class ServerService {
@@ -8,16 +8,21 @@ export class ServerService {
 
     storeServers(servers: any[]) {
         const headers = new Headers({
-            'content-Type':'application/json'
+            'content-Type': 'application/json'
         });
 
-        return this.http.post(
-            'https://sample-httprequest.firebaseio.com/data.json', 
-            servers, 
-            { headers: headers});
+        // return this.http.post(
+        //     'https://sample-httprequest.firebaseio.com/data.json',
+        //     servers,
+        //     { headers: headers });
+
+        return this.http.put(
+            'https://sample-httprequest.firebaseio.com/data.json',
+            servers,
+            { headers: headers });
     }
 
-    getServers(){
+    getServers() {
         return this.http.get(
             'https://sample-httprequest.firebaseio.com/data.json'
         );
