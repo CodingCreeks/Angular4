@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing.module";
-import { RecipesModule } from "app/recipes/recipes.module";
 import { ShoppingListModule } from "app/shopping-list/shopping-list.module";
 import { SharedModule } from "app/shared/shared.module";
 import { AuthModule } from "app/auth/auth.module";
@@ -18,7 +17,6 @@ import { CoreModule } from "app/core/core.module";
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule,
     SharedModule,
     ShoppingListModule,
     AuthModule,
