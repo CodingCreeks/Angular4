@@ -18,10 +18,10 @@ import { CoreModule } from "app/core/core.module";
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    SharedModule,
-    ShoppingListModule,
     AuthModule,
     CoreModule,
+    SharedModule,
+    ShoppingListModule,
     BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
