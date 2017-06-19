@@ -5,16 +5,25 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class GithubService {
   private username: string;
-  private client_id = '9bac841dc2140318a627';
-  private client_secret = '18d8d3778f853154b01626076a068542ba246699';
+  private client_id = 'cab7d081f71184a02af5';
+  private client_secret = '068fd31971badf3027d80bfa535e30052646a02e';
 
   constructor(private _http: Http) {
+    console.log('Github Service Ready...');
     this.username = 'CodingKnowledge';
-    console.log('GitHub service is ready');
   }
 
   getUser() {
-    return this._http.get('http://api.github.com/users/' + this.username+'?client_id='+this.client_id+'&client_secret='+'this.client_secret')
+    return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
       .map(res => res.json());
+  }
+
+  getRepos() {
+    return this._http.get('http://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+      .map(res => res.json());
+  }
+
+  updateUser(username: string) {
+    this.username = username;
   }
 }
