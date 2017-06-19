@@ -7,10 +7,14 @@ import { GithubService } from "app/src/app/component/service/github.service";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  user: any[];
 
   constructor(private githubService: GithubService) {
+
     this.githubService.getUser().subscribe(user => {
       console.log(user);
+      this.user = user;
+
     });
   }
 

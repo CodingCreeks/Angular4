@@ -1,3 +1,41 @@
-<p>
-  profile works!
-</p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">GitHub Search</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div *ngIf="user">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{user.login}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-thumbnail" src="{{user.avatar_url}}" alt="profile picture">
+            <a href="{{user.html_url}}" target="_blank" class="btn btn-default btn-block">Profile</a>
+          </div>
+          <div class="col-md-8">
+            <div class="stats">
+              <span class="label label-default">{{user.public_repos}} public Repos</span>
+              <span class="lable label-primary">{{user.public_gists}} public Gists</span>
+              <span class="lable label-success">{{user.fllowers}} Followers</span>
+              <span class="lable label-info">{{user.following}} Following</span>
+            </div>
+            <br>
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Username: </strong>{{user.login}}</li>
+              <li class="list-group-item"><strong>Location: </strong>{{user.location}}</li>
+              <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
+              <li class="list-group-item"><strong>Blog: </strong>{{user.blog}}</li>
+              <li class="list-group-item"><strong>Member Since: </strong>{{user.created_at}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
