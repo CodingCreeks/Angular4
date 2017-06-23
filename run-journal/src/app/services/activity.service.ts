@@ -13,7 +13,6 @@ export class ActivityService {
     return SAVED_ACTIVITIES.slice(0);
   }
   getTotalActivites(allActivites: Activity[]) {
-    console.log("Length: "+allActivites.length);
     return allActivites.length;
   }
 
