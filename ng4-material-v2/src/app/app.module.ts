@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '@angular/material';
-
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 
