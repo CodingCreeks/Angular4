@@ -11,7 +11,8 @@ import { NavbarComponent } from "./components/home/navbar/navbar.component";
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
