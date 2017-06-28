@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from "./components/header/navbar/navbar.component";
+import { NavbarComponent } from "./components/home/navbar/navbar.component";
 
 
 @NgModule({
