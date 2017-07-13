@@ -5,17 +5,22 @@ import { NgModule } from '@angular/core';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { PopularComponent } from './popular/popular.component';
+import { ContactsService } from './contacts.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactsComponent,
+    PopularComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
