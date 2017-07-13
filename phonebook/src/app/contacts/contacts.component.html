@@ -1,3 +1,6 @@
-<p>
-  contacts works!
-</p>
+<md-nav-list>
+    <a md-list-item *ngFor="let contact of contacts">
+        <h4 md-line>{{contact.name}}</h4>
+        <p md-line>{{contact.number}}</p>
+    </a>
+</md-nav-list>
