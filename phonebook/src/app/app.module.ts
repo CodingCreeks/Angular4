@@ -7,21 +7,22 @@ import { Routes, RouterModule } from '@angular/router';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent, AddContactDialog } from './contacts/contacts.component';
 import { PopularComponent } from './popular/popular.component';
 import { ContactsService } from './contacts.service';
 
-const routes:Routes=[
-  { path:'', component: PopularComponent },
-  { path:'contacts', component: ContactsComponent },
-  { path:'popular', component: PopularComponent }
+const routes: Routes = [
+  { path: '', component: PopularComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'popular', component: PopularComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
-    PopularComponent
+    PopularComponent,
+    AddContactDialog
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ const routes:Routes=[
     RouterModule.forRoot(routes)
   ],
   providers: [ContactsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddContactDialog]
 })
 export class AppModule { }
