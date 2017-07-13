@@ -1,3 +1,4 @@
+import { ContactsService } from './../contacts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popular.component.css']
 })
 export class PopularComponent implements OnInit {
+  contacts: any[];
 
-  constructor() { }
+  constructor(private contactService: ContactsService) { }
 
   ngOnInit() {
+    this.contacts=this.contactService.getContacts().slice(0,3);
   }
 
 }
