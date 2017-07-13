@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  courseGoals = [
+    { title: "Master Angular Styling", isActiveGoal: true },
+    { title: "Understad Angular Animations", isActiveGoal: false },
+    { title: "Master Angular Animations", isActiveGoal: false }
+  ]
 }
