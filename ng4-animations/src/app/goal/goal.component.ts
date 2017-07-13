@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-goal',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./goal.component.css']
 })
 export class GoalComponent implements OnInit {
+  @Input() goal: any;
 
   constructor() { }
 
