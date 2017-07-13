@@ -2,8 +2,11 @@
     <a md-list-item *ngFor="let contact of contacts">
         <h4 md-line>{{contact.name}}</h4>
         <p md-line>{{contact.number}}</p>
+        <button md-icon-button (click)="delete(contact)">
+          <md-icon>delete</md-icon>
+        </button>
     </a>
-    <button md-min-fab class="add-contact-fab" (click)="add()">
+    <button md-mini-fab class="add-contact-fab" (click)="add()">
     <md-icon>add</md-icon>
   </button>
 </md-nav-list>

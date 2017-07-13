@@ -26,6 +26,10 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  delete(contact) {
+    this.contacts.splice(this.contacts.indexOf(contact), 1);
+  }
+
 }
 
 @Component({
