@@ -5,7 +5,10 @@
 }
 
 :host(.favorite) {
-    display: block;
     border: 1px solid red;
-    padding: 20px;
+}
+
+:host-context(.boring) {
+    border: 1px solid #ccc;
+    color: #ccc;
 }
