@@ -13,6 +13,11 @@
     color: #ccc;
 }
 
-:host-context(.boring #very-boring) /deep/ h1 {
+
+/* :host-context(.boring #very-boring) /deep/ h1 {
+    color: #ccc;
+} */
+
+:host-context(.boring #very-boring)>>>h1 {
     color: #ccc;
 }
