@@ -1,2 +1,2 @@
-<div (click)="divClicked = true" [ngStyle]="{ backgroundColor: divClicked ? 'red':'blue'}">
+<div (click)="divClicked = true" [ngClass]="{marked: divClicked}" [ngStyle]="{ backgroundColor: divClicked ? 'red':'blue'}">
 </div>
