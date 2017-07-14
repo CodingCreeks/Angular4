@@ -5,7 +5,11 @@
 }
 
 :host(.favorite) {
-    border: 1px solid red;
+    border: 5px solid red;
+}
+
+h1 {
+    color: red;
 }
 
 :host-context(.boring #very-boring) {
