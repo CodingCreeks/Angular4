@@ -20,10 +20,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.prjService.loadProjects()
       .subscribe(
-        (prj: Project[]) => {
-          this.progress = 'finished';
-          this.projects = prj;
-        }
+      (prj: Project[]) => {
+        this.progress = 'finished';
+        this.projects = prj;
+      }
       );
   }
 

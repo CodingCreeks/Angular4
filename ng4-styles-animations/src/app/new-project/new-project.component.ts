@@ -24,7 +24,7 @@ export class NewProjectComponent implements OnInit {
   }
 
   onCreateProject() {
-    this.projectCreated.emit({name: this.form.value.name, description: this.form.value.description, status: this.form.value.status});
+    this.projectCreated.emit({ name: this.form.value.name, description: this.form.value.description, status: this.form.value.status });
   }
 
   onCancel() {
