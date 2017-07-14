@@ -8,10 +8,10 @@
             <div class="intersting">
                 <app-quote (click)="isFavorite=!isFavorite" [ngClass]="{'favorite': isFavorite}" [ngStyle]="{'width.px': isFavorite? 600 : 400}"></app-quote>
             </div>
-            <button class="btn btn-primary" (click)="showBoring= true">Show Boring Quotes</button>
+            <button class="btn btn-primary" (click)="onShowBoring(boringBlock)">Show Boring Quotes</button>
 
-            <div class="boring" *ngIf="showBoring">
-                <div id="very-boring">
+            <div class="boring" #boringBlock style="display: none">
+                <div id="very-boring ">
                     <app-quote></app-quote>
                 </div>
             </div>

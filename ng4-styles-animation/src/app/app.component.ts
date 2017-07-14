@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isFavorite = false;
-  showBoring = false;
+
+  onShowBoring(element: HTMLElement) {
+    element.style.display = 'block';
+  }
 
   title = 'My Quotes !!';
 }
