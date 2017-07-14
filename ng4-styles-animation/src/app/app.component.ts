@@ -1,5 +1,5 @@
 import { element } from 'protractor';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isFavorite = false;
+  constructor(private renderer: Renderer2){ }
 
   onShowBoring(element: HTMLElement) {
-    element.style.display = 'block';
+    // element.style.display = 'block';
+    this.renderer.setStyle(element, 'display', 'block');
   }
 
   title = 'My Quotes !!';
