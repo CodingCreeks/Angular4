@@ -2,5 +2,9 @@
 
 h1 {
     color: darkgreen;
-    font-weight: 20px;
+    font-size: 20px;
+}
+
+app-quote {
+    width: 50%;
 }
