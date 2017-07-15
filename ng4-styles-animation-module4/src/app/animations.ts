@@ -28,7 +28,7 @@ export const showStateTrigger = trigger('showState', [
 
 export const animateStateTrigger = trigger('animateState', [
   transition('* => *', [
-    animate(400, style({
+    animate('400ms cubic-bezier(.16, .78 ,0 ,.92)', style({
       width: 0
     })),
     animate(400, style({
