@@ -5,21 +5,21 @@ import { trigger, state, style } from "@angular/animations";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations:[
+  animations: [
     trigger('clickedState', [
       state('default', style({
-        backgroundColor:'orange',
-        width:'100px',
-        height:'100px'
+        backgroundColor: 'orange',
+        width: '100px',
+        height: '100px'
       })),
       state('clicked', style({
-        backgroundColor:'blue',
-        width:'300px',
-        height:'50px'
+        backgroundColor: 'blue',
+        width: '300px',
+        height: '50px'
       }))
     ])
   ]
 })
 export class AppComponent {
-  title = 'app';
+    clickInfo = 'default';
 }
