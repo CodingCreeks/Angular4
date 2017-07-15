@@ -79,7 +79,7 @@ export const itemStateTrigger = trigger('itemState', [
     style({
       transform: 'translateY(0)'
     }),
-    animate('300ms ease-out', style({
+    animate('300ms ease-in', style({
       transform: 'translateY(-100%)'
     }))
   ])
