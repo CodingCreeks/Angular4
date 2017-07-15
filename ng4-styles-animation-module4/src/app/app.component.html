@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <button class="btn btn-primary" (click)="showParagraph=!showParagraph">show/hide text</button>
+            <button class="btn btn-primary" (click)="showParagraph()">show/hide text</button>
 
-            <p *ngIf="!showParagraph"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, labore veniam, reprehenderit voluptatibus quisquam asperiores iure repudiandae illum in architecto reiciendis nobis ullam aspernatur ea, minima officia ducimus fuga. Id.
+            <p [@showState]="isShown ? 'shown': 'notshown'" *ngIf="isShown"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, labore veniam, reprehenderit voluptatibus quisquam asperiores iure repudiandae illum in architecto reiciendis nobis ullam aspernatur ea, minima officia ducimus fuga. Id.
             </p>
         </div>
     </div>
