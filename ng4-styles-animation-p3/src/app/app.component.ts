@@ -12,7 +12,7 @@ import { trigger, state, style } from "@angular/animations";
         width:'100px',
         height:'100px'
       })),
-      state('default', style({
+      state('clicked', style({
         backgroundColor:'blue',
         width:'300px',
         height:'50px'
