@@ -55,16 +55,35 @@ export const itemStateTrigger = trigger('itemState', [
   transition(':leave', [
     animate('500ms ease-in', keyframes([
       style({
-        opacity:1,
+        opacity: 1,
         transform: 'translateX(0%)'
       }),
       style({
         transform: 'translateX(-15%)'
       }),
       style({
-        opacity:0,
+        opacity: 0,
         transform: 'translateX(100%)'
       })
     ]))
+  ])
+]);
+
+export const slideStateTrigger = trigger('slideState', [
+  transition(':enter', [
+    style({
+      transform: 'translateY(-100%)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateY(0)'
+    }))
+  ]),
+  transition(':leave', [
+    style({
+      transform: 'translateY(0)'
+    }),
+    animate('300ms ease-in', style({
+      transform: 'translateY(-100%)'
+    }))
   ])
 ]);
