@@ -7,4 +7,13 @@
             </p>
         </div>
     </div>
+    <div class="row">
+        <br>
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="shrikWidth = shrikWidth-50">Shrink Paragraph</button>
+            <button class="btn btn-primary" (click)="animate = true">Animate Paragraph</button>
+
+            <p [@animateState]="animate ? 'animated' : 'notanimated'" [ngStyle]="{'width.px': shrikWidth}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ullam fuga sequi consectetur quisquam quae eos minima laborum, dicta ab molestias, et dolore dolorem mollitia. Omnis, eaque ut at porro.</p>
+        </div>
+    </div>
 </div>
