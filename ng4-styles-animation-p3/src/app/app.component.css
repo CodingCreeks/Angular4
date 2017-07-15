@@ -3,3 +3,7 @@
     height: 200px;
     background-color: green;
 }
+
+span {
+    display: inline-block;
+}

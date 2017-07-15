@@ -32,7 +32,8 @@ import { trigger, state, style, transition, animate } from "@angular/animations"
     trigger('numberEnteredState', [
       state('unselected', style({
         border: '1px solid black',
-        padding: '5px'
+        padding: '5px',
+        backgroundColor: 'white'
       })),
       state('selected', style({
         border: '2px solid blue',
