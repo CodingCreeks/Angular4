@@ -31,3 +31,21 @@ export const markedTrigger = trigger('markedState', [
     animate('300ms ease-out')
   ])
 ]);
+
+export const itemStateTrigger = trigger('itemState', [
+  transition(':enter', [
+    style({
+      opacity: 0,
+      trasform: 'traslateX(-100%)'
+    }),
+    animate('500ms ease-out', style({
+      opacity: 0,
+      transform: 'translateX(0)'
+    }))
+  ]),
+  transition(':enter', [
+    animate('500ms ease-in', style({
+      transform: 'translateX(100%)'
+    }))
+  ])
+]);
