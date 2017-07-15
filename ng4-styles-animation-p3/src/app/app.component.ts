@@ -25,7 +25,9 @@ import { trigger, state, style, transition, animate } from "@angular/animations"
       })),
       transition('default=>clicked', animate('1s 500ms ease-in')),
       // transition('clicked => default', animate('300ms ease-out'))
-      transition('clicked => default', animate(300))
+      transition('clicked => default', animate(300)),
+      transition('mousedown => clicked', animate(300)),
+      transition('clicked => mousedown', animate(300))
     ])
   ]
 })
