@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { showStateTrigger, animateStateTrigger } from './animations';
+import { showStateTrigger, animateStateTrigger, listStateTrigger } from './animations';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,8 @@ import { showStateTrigger, animateStateTrigger } from './animations';
   styleUrls: ['./app.component.css'],
   animations: [
     showStateTrigger,
-    animateStateTrigger
+    animateStateTrigger,
+    listStateTrigger
   ]
 })
 export class AppComponent {

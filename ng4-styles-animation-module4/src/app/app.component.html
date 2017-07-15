@@ -19,7 +19,7 @@
 
     <div class="row">
         <button class="btn btn-primary" (click)="onAddElement()">Add Element</button>
-        <div *ngFor="let testResult of testResults" @showState class="test-result">
+        <div @listState *ngFor="let testResult of testResults" class="test-result">
             {{testResult}}
         </div>
     </div>
