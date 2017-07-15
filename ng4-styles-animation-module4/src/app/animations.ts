@@ -38,18 +38,6 @@ export const animateStateTrigger = trigger('animateState', [
 ]);
 
 export const listStateTrigger = trigger('listState', [
-  // transition('void => *', [
-  //   style({
-  //     opacity: 0
-  //   }),
-  //   animate(300)
-  // ]),
-  // transition('* => void', [
-  //   style({
-  //     opacity: 0
-  //   })
-  // ])
-
   transition(':enter', [
     style({
       opacity: 0,
