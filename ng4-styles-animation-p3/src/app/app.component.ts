@@ -17,6 +17,12 @@ import { trigger, state, style, transition, animate } from "@angular/animations"
         width: '300px',
         height: '50px'
       })),
+      state('mousedown', style({
+        backgroundColor: 'red',
+        border: '1px solid black',
+        width: '100px',
+        height: '100px'
+      })),
       transition('default=>clicked', animate('1s 500ms ease-in')),
       // transition('clicked => default', animate('300ms ease-out'))
       transition('clicked => default', animate(300))
