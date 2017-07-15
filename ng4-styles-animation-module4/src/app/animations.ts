@@ -49,13 +49,16 @@ export const listStateTrigger = trigger('listState', [
       })),
       animate('500ms ease-out', keyframes([
         style({
-          backgroundColor:'white'
+          backgroundColor: 'white',
+          offset: 0
         }),
         style({
-          backgroundColor:'red'
+          backgroundColor: 'red',
+          offset: 0.8
         }),
         style({
-          backgroundColor:'green'
+          backgroundColor: 'green',
+          offset: 1
         })
       ]))
     ]),
