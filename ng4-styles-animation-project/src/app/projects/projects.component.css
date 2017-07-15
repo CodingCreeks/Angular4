@@ -3,7 +3,7 @@
 }
 
 .marked {
-    border: 2px solid blue;
+    border: 2px solid deepskyblue;
     animation: marked 0.5s ease-out forwards;
 }
 
