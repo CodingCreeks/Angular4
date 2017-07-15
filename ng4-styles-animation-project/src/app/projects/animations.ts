@@ -1,4 +1,3 @@
-import { style, animate } from '@angular/animations';
 import { trigger, style, state, transition, animate } from '@angular/animations';
 
 export const markedTrigger = trigger('markedState', [
