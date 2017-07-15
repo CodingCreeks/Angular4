@@ -16,4 +16,11 @@
             <p [@animateState]="animate ? 'animated' : 'notanimated'" [ngStyle]="{'width.px': shrikWidth}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ullam fuga sequi consectetur quisquam quae eos minima laborum, dicta ab molestias, et dolore dolorem mollitia. Omnis, eaque ut at porro.</p>
         </div>
     </div>
+
+    <div class="row">
+        <button class="btn btn-primary" (click)="onAddElement()">Add Element</button>
+        <div *ngFor="let testResult of testResults" @showState class="test-result">
+            {{testResult}}
+        </div>
+    </div>
 </div>

@@ -15,8 +15,13 @@ export class AppComponent {
   isShown = false;
   shrikWidth = 500;
   animate = false;
+  testResults = [];
 
   showParagraph() {
     this.isShown = !this.isShown;
+  }
+
+  onAddElement() {
+    this.testResults.push(Math.random());
   }
 }
