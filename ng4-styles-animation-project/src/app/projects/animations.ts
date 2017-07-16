@@ -1,4 +1,4 @@
-import { trigger, style, state, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 export const markedTrigger = trigger('markedState', [
   state('default', style({
@@ -7,7 +7,7 @@ export const markedTrigger = trigger('markedState', [
     padding: '20px'
   })),
   state('marked', style({
-    border: '1px solid blue',
+    border: '2px solid blue',
     backgroundColor: '#caeff9',
     padding: '19px'
   })),
@@ -15,7 +15,6 @@ export const markedTrigger = trigger('markedState', [
     style({
       border: '2px solid black',
       padding: '19px'
-
     }),
     animate('200ms ease-out', style({
       transform: 'scale(1.05)'
@@ -26,10 +25,10 @@ export const markedTrigger = trigger('markedState', [
     style({
       border: '1px solid blue',
       padding: '20px'
-
     }),
     animate('300ms ease-out')
-  ])
+  ]),
+  // transition('marked => default', animate('300ms ease-out')),
 ]);
 
 export const itemStateTrigger = trigger('itemState', [
@@ -47,7 +46,7 @@ export const itemStateTrigger = trigger('itemState', [
       }),
       style({
         opacity: 1,
-        transform: 'translateX(0%)',
+        transform: 'translateX(0)',
         offset: 1
       })
     ]))
@@ -56,7 +55,7 @@ export const itemStateTrigger = trigger('itemState', [
     animate('500ms ease-in', keyframes([
       style({
         opacity: 1,
-        transform: 'translateX(0%)'
+        transform: 'translateX(0)'
       }),
       style({
         transform: 'translateX(-15%)'
@@ -79,7 +78,7 @@ export const itemStateTrigger = trigger('itemState', [
     style({
       transform: 'translateY(0)'
     }),
-    animate('300ms ease-in', style({
+    animate('300ms ease-out', style({
       transform: 'translateY(-100%)'
     }))
   ])
@@ -98,7 +97,7 @@ export const slideStateTrigger = trigger('slideState', [
     style({
       transform: 'translateY(0)'
     }),
-    animate('300ms ease-in', style({
+    animate('300ms ease-out', style({
       transform: 'translateY(-100%)'
     }))
   ])

@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, group, animate, query } from '@angular/animations';
+import { animate, group, state, style, transition, trigger, query } from '@angular/animations';
 
 export const buttonStateTrigger = trigger('buttonState', [
   state('valid', style({
@@ -8,17 +8,17 @@ export const buttonStateTrigger = trigger('buttonState', [
   })),
   state('invalid', style({
     backgroundColor: 'red',
-    borderColor: 'darkred',
-    color: 'white'
+    color: 'white',
+    borderColor: 'darkred'
   })),
   transition('invalid => valid', [
     group([
       animate(100, style({
-        transform: 'scale(1,1)'
+        transform: 'scale(1.1)'
       })),
       animate(200, style({
         backgroundColor: 'lightgreen'
-      })),
+      }))
     ]),
     animate(200, style({
       transform: 'scale(1)'
@@ -27,11 +27,11 @@ export const buttonStateTrigger = trigger('buttonState', [
   transition('valid => invalid', [
     group([
       animate(100, style({
-        transform: 'scale(1,1)'
+        transform: 'scale(1.1)'
       })),
       animate(200, style({
         backgroundColor: 'red'
-      })),
+      }))
     ]),
     animate(200, style({
       transform: 'scale(1)'

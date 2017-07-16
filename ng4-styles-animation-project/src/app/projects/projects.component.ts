@@ -1,11 +1,11 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 
-import { markedTrigger, itemStateTrigger, slideStateTrigger } from './animations';
-import { routeFadeStateTrigger, routeSlideStateTrigger } from './../shared/route-animations';
-
 import { Project } from './project.model';
+
 import { ProjectsService } from './projects.service';
+import { markedTrigger, itemStateTrigger, slideStateTrigger } from './animations';
+import { routeFadeStateTrigger, routeSlideStateTrigger } from '../shared/route-animations';
 
 @Component({
   selector: 'app-projects',
@@ -20,10 +20,8 @@ import { ProjectsService } from './projects.service';
   ]
 })
 export class ProjectsComponent implements OnInit {
-
   // @HostBinding('@routeFadeState') routeAnimation = true;
   @HostBinding('@routeSlideState') routeAnimation = true;
-
   projects: Project[];
   displayedProjects: Project[] = [];
   markedPrjIndex = 0;
@@ -35,13 +33,13 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.prjService.loadProjects()
       .subscribe(
-      (prj: Project[]) => {
-        this.progress = 'finished';
-        this.projects = prj;
-        if (this.projects.length >= 1) {
-          this.displayedProjects.push(this.projects[0]);
+        (prj: Project[]) => {
+          this.progress = 'finished';
+          this.projects = prj;
+          if (this.projects.length >= 1) {
+            this.displayedProjects.push(this.projects[0]);
+          }
         }
-      }
       );
   }
 
