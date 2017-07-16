@@ -1,6 +1,6 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
-import { routeFadeStateTrigger, routeSlideStateTrigger } from './../shared/route-animations';
+import { routeFadeStateTrigger, routeSlideStateTrigger } from '../shared/route-animations';
 
 @Component({
   selector: 'app-users',

@@ -3,14 +3,18 @@
     border-radius: 3px;
     box-shadow: 3px 3px 2px #ccc;
     margin: 20px 0;
-    /* padding: 20px; */
-    /* transition: border-color 0.75s ease-out; */
+    /*padding: 20px;*/
+    /*transition: border-color 0.5s ease-out;*/
 }
 
 
-/* :host(.marked) {
-    padding: 19px;
-} */
+/*:host(.marked) {*/
+
+
+/*padding: 19px;*/
+
+
+/*}*/
 
 :host(.inactive) {
     color: #ccc;

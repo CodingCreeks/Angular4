@@ -46,6 +46,6 @@ export const formStateTrigger = trigger('formState', [
         backgroundColor: 'red'
       })),
       animate(200)
-    ], { optional: true })
+    ], {optional: true})
   ])
 ]);

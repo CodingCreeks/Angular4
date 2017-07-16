@@ -16,6 +16,6 @@
         [value]="status">{{ status }}</option>
     </select>
     </div>
-    <button type="submit" [disabled]="!f.valid" [@buttonState]="f.valid ? 'valid': 'invalid'" class="btn btn-success">Create Project</button>
+    <button type="submit" [disabled]="!f.valid" [@buttonState]="f.valid ? 'valid' : 'invalid'" class="btn btn-success">Create Project</button>
     <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
 </form>
