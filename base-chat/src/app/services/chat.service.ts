@@ -1,32 +1,50 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/Auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
-import * as firbase from 'firebase/app';
+import * as firebase from 'firebase/app';
 
-import { User } from './../models/user.model';
-import { ChatMessage } from './../models/chat-message.model';
+import { ChatMessage } from '../models/chat-message.model';
 
 @Injectable()
 export class ChatService {
-  user: any;
+
+  user: firebase.User;
   chatMessages: FirebaseListObservable<ChatMessage[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
-  constructor(private db: AngularFireDatabase,
+  constructor(
+    private db: AngularFireDatabase,
     private afAuth: AngularFireAuth
   ) {
+
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
         this.user = auth;
       }
+
+      this.getUser().subscribe(a => {
+        this.userName = a.displayName;
+      });
     });
+
+  }
+
+  getUser() {
+    const userId = this.user.uid;
+    const path = `/users/${userId}`;
+    return this.db.object(path);
+  }
+
+  getUsers() {
+    const path = '/users';
+    return this.db.list(path);
   }
 
   sendMessage(msg: string) {
+
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     this.chatMessages = this.getMessages();
@@ -36,16 +54,17 @@ export class ChatService {
       userName: this.userName,
       email: email
     });
-    console.log('called meassage()!');
+
   }
 
   getMessages(): FirebaseListObservable<ChatMessage[]> {
-    //Query to create our message feed binding
+    // query to create our message feed binding
     return this.db.list('messages', {
       query: {
         limitToLast: 25,
         orderByKey: true
       }
+
     });
   }
 
@@ -59,6 +78,6 @@ export class ChatService {
       now.getUTCMinutes() + ':' +
       now.getUTCSeconds();
 
-    return (date + '' + time);
+    return (date + ' ' + time);
   }
 }
