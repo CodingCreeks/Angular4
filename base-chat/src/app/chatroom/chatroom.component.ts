@@ -6,13 +6,11 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@ang
   styleUrls: ['./chatroom.component.css']
 })
 export class ChatroomComponent implements OnInit, AfterViewChecked {
-
   @ViewChild('scroller') private feedContainer: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
-
   }
 
   scrollToBottom(): void {
@@ -23,5 +21,4 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     this.scrollToBottom();
   }
-
 }

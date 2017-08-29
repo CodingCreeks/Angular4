@@ -8,14 +8,16 @@ import * as firebase from 'firebase/app';
 import { ChatMessage } from '../models/chat-message.model';
 
 @Injectable()
-
 export class ChatService {
   user: firebase.User;
   chatMessages: FirebaseListObservable<ChatMessage[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
-  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
+  constructor(
+    private db: AngularFireDatabase,
+    private afAuth: AngularFireAuth
+  ) {
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
         this.user = auth;
@@ -58,7 +60,6 @@ export class ChatService {
         orderByKey: true
       }
     });
-
   }
 
   getTimeStamp() {
@@ -69,6 +70,7 @@ export class ChatService {
     const time = now.getUTCHours() + ':' +
       now.getUTCMinutes() + ':' +
       now.getUTCSeconds();
+
     return (date + ' ' + time);
   }
 }

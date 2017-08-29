@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-
 export class LoginFormComponent {
   email: string;
   password: string;
@@ -18,7 +17,6 @@ export class LoginFormComponent {
   login() {
     console.log('login() called from login-form component');
     this.authService.login(this.email, this.password)
-      .catch(error => this.errorMsg = error.message);
+    .catch(error => this.errorMsg = error.message);
   }
-
 }

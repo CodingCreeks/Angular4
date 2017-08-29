@@ -8,7 +8,6 @@ import * as firebase from 'firebase/app';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-
 export class NavbarComponent implements OnInit {
   user: Observable<firebase.User>;
   userEmail: string;
@@ -27,5 +26,4 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
-
 }

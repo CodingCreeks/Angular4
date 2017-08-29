@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { ChatroomComponent } from './app/chatroom/chatroom.component';
 import { LoginFormComponent } from './app/login-form/login-form.component';
 import { SignupFormComponent } from './app/signup-form/signup-form.component';

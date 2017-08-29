@@ -62,6 +62,7 @@ export class AuthService {
 
   setUserStatus(status: string): void {
     const path = `users/${this.currentUserId}`;
+
     const data = {
       status: status
     };
@@ -69,5 +70,4 @@ export class AuthService {
     this.db.object(path).update(data)
       .catch(error => console.log(error));
   }
-
 }
