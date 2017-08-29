@@ -18,7 +18,10 @@ export class SignupFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  signUp(){
-
+  signUp() {
+    const email = this.email;
+    const password = this.password;
+    const displayName = this.displatName;
+    this.authService.signUp(email, password, displayName).then(resolve => this.router.navigate(['/chat'])).catch(error => this.errorMsg = error.message);
   }
 }

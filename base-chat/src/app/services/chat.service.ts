@@ -8,18 +8,14 @@ import * as firebase from 'firebase/app';
 import { ChatMessage } from '../models/chat-message.model';
 
 @Injectable()
-export class ChatService {
 
+export class ChatService {
   user: firebase.User;
   chatMessages: FirebaseListObservable<ChatMessage[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
-  constructor(
-    private db: AngularFireDatabase,
-    private afAuth: AngularFireAuth
-  ) {
-
+  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
         this.user = auth;
@@ -29,7 +25,6 @@ export class ChatService {
         this.userName = a.displayName;
       });
     });
-
   }
 
   getUser() {
@@ -44,7 +39,6 @@ export class ChatService {
   }
 
   sendMessage(msg: string) {
-
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     this.chatMessages = this.getMessages();
@@ -54,7 +48,6 @@ export class ChatService {
       userName: this.userName,
       email: email
     });
-
   }
 
   getMessages(): FirebaseListObservable<ChatMessage[]> {
@@ -64,8 +57,8 @@ export class ChatService {
         limitToLast: 25,
         orderByKey: true
       }
-
     });
+
   }
 
   getTimeStamp() {
@@ -73,11 +66,9 @@ export class ChatService {
     const date = now.getUTCFullYear() + '/' +
       (now.getUTCMonth() + 1) + '/' +
       now.getUTCDate();
-
     const time = now.getUTCHours() + ':' +
       now.getUTCMinutes() + ':' +
       now.getUTCSeconds();
-
     return (date + ' ' + time);
   }
 }
