@@ -8,7 +8,6 @@ import { ChatService } from './../services/chat.service';
   styleUrls: ['./chat-form.component.css']
 })
 export class ChatFormComponent implements OnInit {
-
   message: string;
 
   constructor(private chat: ChatService) { }
@@ -18,6 +17,7 @@ export class ChatFormComponent implements OnInit {
 
   send() {
     this.chat.sendMessage(this.message);
+    this.message='';
   }
 
   handleSubmit(event) {
