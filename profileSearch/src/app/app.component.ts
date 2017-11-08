@@ -8,5 +8,5 @@ import { GithubService } from "app/src/app/component/service/github.service";
   providers: [GithubService]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'app works';
 }
