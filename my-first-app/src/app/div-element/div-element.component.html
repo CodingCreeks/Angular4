@@ -1,0 +1,8 @@
+<form #f1="ngForm" (ngSubmit)="submit()">
+    <label for="Name">Name</label>
+    <input type="text" name="n1" [(ngModel)]="name" #n1 required/>
+
+    <label for="Name">Country</label>
+    <input type="text" name="c1" [(ngModel)]="country" #c1 required/>
+    <button type="submit">Submit</button>
+</form>

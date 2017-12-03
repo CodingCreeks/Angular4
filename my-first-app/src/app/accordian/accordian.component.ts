@@ -12,4 +12,10 @@ export class AccordianComponent implements OnInit {
   ngOnInit() {
   }
 
+  isYesSelected: boolean = false;
+
+    enable(boolean) {
+      return this.isYesSelected = boolean;
+    }
+
 }
